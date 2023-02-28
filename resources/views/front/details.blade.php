@@ -16,6 +16,9 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="{{ route('home') }}">Home</a> 
+              </li>
+              <li class="nav-item"> 
                 <a class="nav-link" aria-current="page" href="#">Brand</a>
               </li>
             </ul>
@@ -27,36 +30,32 @@
             <div class="row mb-5">
                 <div class="col-lg-12">
                     <h1>    
-                        Latest UX Case
+                        {{ $brand->name }} UX Cases
                     </h1>
                 </div>
             </div>
-            @foreach($brands as $brand)
-            <div class="row mb-5">
-                <div class="col-lg-12">
-                    <img height="80" src="{{ Storage::url($brand->logo) }}" alt="">
-                    <h2>
-                        {{ $brand->name }}
-                    </h2>
-                    @php
-                        $posts = \App\Models\Post::where('id_brand', $brand->id)->get(); 
-                    @endphp
+            <div class="row mb-5 pb-5">
+                <div class="col-lg-7">
+                    <img height="400" src="{{ Storage::url($details->photo) }}" alt="">
+                </div>
+                <div class="col-lg-4 mt-5">
+                    <h3>
+                        Explanation
+                    </h3>
                     <p>
-                        {{ count($posts) }} UX Cases
+                        {{ $details->description }}
                     </p>
-                    <div class="row">
-                        @foreach($posts as $post)
-                            <div class="col-lg-3">
-                                <a href="{{ route('details', ['brand' => $brand->name, 'id_post' => $post->id]) }}">
-                                    <img height="200" src="{{ Storage::url($post->photo) }}" alt="">
-                                </a>
-                            </div>
-                        @endforeach    
-                    </div>
-                    <hr>
                 </div>
             </div>
-            @endforeach
+            <div class="row mt-5 pt-5">
+                @foreach($relate_posts as $post)
+                    <div class="col-lg-3">
+                        <a href="{{ route('details', ['brand' => $brand->name, 'id_post' => $post->id]) }}">
+                            <img height="200" src="{{ Storage::url($post->photo) }}" alt="">
+                        </a>
+                    </div>
+                @endforeach    
+            </div>
         </div>
     </section>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>

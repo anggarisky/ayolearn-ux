@@ -17,6 +17,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [FrontController::class, 'index'])->name('home');
+Route::get('{brand}/{id_post}', [FrontController::class, 'details'])->name('details');
 
 Route::get('admin/brand', [BrandController::class, 'index'])->name('admin.index.brand');
 Route::get('admin/add/brand', [BrandController::class, 'create'])->name('admin.create.brand');
