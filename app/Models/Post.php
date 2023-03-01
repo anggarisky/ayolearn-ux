@@ -11,6 +11,7 @@ class Post extends Model
 
     protected $fillable = [
         'photo',
+        'title',
         'description',
         'id_brand'
     ];

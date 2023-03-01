@@ -1,0 +1,15 @@
+$blue: #1230F6;
+$black: #000000;
+$darkgray: #5B5D59;
+$gray: #F5F4F4;
+$white: #ffffff;
+$poppins: "Poppins";
+
+body {
+    font-family: $poppins;
+    background: $blue;
+
+    a {
+        text-decoration: none;
+    }
+}

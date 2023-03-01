@@ -36,6 +36,7 @@
                         <thead>
                           <tr> 
                             <th scope="col">ID</th>
+                            <th scope="col">Title</th>
                             <th scope="col">Photo</th>
                             <th scope="col">Description</th> 
                             <th scope="col">Actions</th> 
@@ -45,6 +46,7 @@
                             @foreach($posts as $post)
                             <tr> 
                                 <td>{{ $post->id }}</td>
+                                <td>{{ $post->title }}</td>
                                 <td><img height="60" src="{{ Storage::url($post->photo) }}" alt=""></td>
                                 <td>{{ $post->description }}</td>
                                 <td>

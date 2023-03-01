@@ -29,6 +29,10 @@
                           </select>
                         </div>
                         <div class="mb-3">
+                          <label for="exampleInputEmail1" class="form-label">Title</label>
+                          <input type="text" name="title" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                        </div>
+                        <div class="mb-3">
                             <label for="exampleInputPassword1" class="form-label">Explaination</label>
 
                             <div class="form-floating">
